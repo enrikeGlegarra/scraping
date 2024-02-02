@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package teams;
+
+service TeamService {
+  rpc GetTeam(GetTeamRequest) returns (GetTeamResponse);
+}
+
+message GetTeamRequest {
+  string id = 1;
+}
+message GetTeamResponse {
+  string id = 1;
+  string name = 2;
+  string flag = 3;
+  string image = 4;
+  string url = 5;
+}
