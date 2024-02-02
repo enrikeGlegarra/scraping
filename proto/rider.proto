@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package teams;
+
+service RiderService {
+  rpc GetRiderById(GetRiderByIdRequest) returns (GetRiderByIdResponse) {}
+
+}
+message GetRiderByIdRequest {
+  string id = 1;
+}
+message GetRiderByIdResponse {
+   string name = 1;
+   string url = 2;
+   string teamId = 3;
+}
