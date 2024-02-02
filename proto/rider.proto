@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package teams;
+package rider;
 
 service RiderService {
   rpc GetRiderById(GetRiderByIdRequest) returns (GetRiderByIdResponse) {}
