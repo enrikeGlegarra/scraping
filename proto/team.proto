@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package teams;
+package team;
 
 service TeamService {
   rpc GetTeam(GetTeamRequest) returns (GetTeamResponse);
