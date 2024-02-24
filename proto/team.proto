@@ -5,6 +5,7 @@ package team;
 service TeamService {
   rpc GetTeam(GetTeamRequest) returns (GetTeamResponse);
   rpc ListTeams(ListTeamsRequest) returns (ListTeamsResponse);
+  rpc GetTeamRiders(GetTeamRequest) returns (TeamRiderResponse);
 }
 
 message GetTeamRequest {
@@ -26,4 +27,17 @@ message ListTeamsRequest {
 
 message ListTeamsResponse {
   repeated GetTeamResponse teams = 1;
-  int32 total = 2;}
+  int32 total = 2;
+}
+
+message RiderResponse {
+  string id = 1;
+  string name = 2;
+  string url = 3;
+
+}
+message TeamRiderResponse {
+  string teamId = 1;
+  string teamName = 2;
+  repeated RiderResponse riders = 3;
+}
