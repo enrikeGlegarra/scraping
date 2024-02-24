@@ -4,6 +4,7 @@ package team;
 
 service TeamService {
   rpc GetTeam(GetTeamRequest) returns (GetTeamResponse);
+  rpc ListTeams(ListTeamsRequest) returns (ListTeamsResponse);
 }
 
 message GetTeamRequest {
@@ -16,3 +17,14 @@ message GetTeamResponse {
   string image = 4;
   string url = 5;
 }
+
+message ListTeamsRequest {
+  int32 page = 1;
+  int32 size = 2;
+  int32 total = 3;
+  string id = 4;
+}
+
+message ListTeamsResponse {
+  repeated GetTeamResponse teams = 1;
+  int32 total = 2;}
